@@ -1,0 +1,110 @@
+SAMPLE IT SUPPORT TICKETS FOR TESTING
+=====================================
+
+Use these tickets to test the system:
+
+TICKET 1 (Network - P1)
+======================
+My VPN keeps disconnecting after the latest update. This is impacting JPMC transmission work. I need this resolved urgently as I cannot access critical systems.
+
+Expected output:
+- Category: Network
+- Priority: P1
+- KB articles on VPN troubleshooting
+- SLA: 2 hours
+- Escalation: Network Team
+
+
+TICKET 2 (Access - P2)
+======================
+I can't access the shared drive \\server\project_files. I'm getting "Access Denied" error. I need to retrieve quarterly reports for a client meeting tomorrow.
+
+Expected output:
+- Category: Access
+- Priority: P2
+- KB articles on shared drive permissions
+- SLA: 4 hours
+- Escalation: Access Control Team
+
+
+TICKET 3 (App - P1)
+===================
+Word document won't open. Getting error code 0xc0000428. This is urgent - I have a presentation for executives in 2 hours and all my slides are in this file.
+
+Expected output:
+- Category: App
+- Priority: P1
+- KB articles on Office file recovery
+- SLA: 2 hours
+- Escalation: Application Support Team
+
+
+TICKET 4 (Hardware - P2)
+========================
+My computer is running extremely slow. Task Manager shows 95% CPU usage constantly. Office files take forever to open. This is making it hard to work.
+
+Expected output:
+- Category: Hardware
+- Priority: P2
+- KB articles on system slowness
+- SLA: 4 hours
+- Escalation: Hardware Team
+
+
+TICKET 5 (Network - P1)
+======================
+Cannot connect to the network. I see a red X icon on the network connection. Ethernet cable is properly plugged in. I have no internet at all and cannot work.
+
+Expected output:
+- Category: Network
+- Priority: P1
+- KB articles on network connectivity
+- SLA: 2 hours
+- Escalation: Network Team
+
+
+DEMO INSTRUCTIONS
+=================
+
+Run basic demo:
+  python main.py --demo
+
+Run demo in step-wise mode (see each agent's output clearly):
+  python main.py --demo --stepwise
+
+Test single ticket:
+  python main.py --ticket "My VPN keeps disconnecting"
+
+Interactive mode (enter your own tickets):
+  python main.py --interactive
+
+
+EXPECTED DEMO OUTPUT
+====================
+
+For Ticket 1 ("VPN keeps disconnecting"):
+
+  [Triage Agent] Network, P1, "VPN disconnection after update"
+  ↓
+  [Knowledge Agent] Found 3 KB articles on VPN issues
+  ↓
+  [Response Agent] Drafts professional response with steps
+  ↓
+  [Critic Agent] Approves response (Score: 8/10)
+  ↓
+  Final Response ready to send
+
+Total execution time: ~30-45 seconds per ticket
+
+
+TESTING CHECKLIST
+=================
+
+✓ All 4 agents process individual tickets
+✓ RAG retriever finds matching KB articles
+✓ Response draft is professional and complete
+✓ Critic provides meaningful feedback
+✓ System terminates after Critic approval
+✓ Demo runs through 3 tickets without errors
+✓ Step-wise mode shows clear agent outputs
+✓ No hallucinated KB information

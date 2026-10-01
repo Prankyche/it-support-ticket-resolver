@@ -1,0 +1,213 @@
+IT SUPPORT KNOWLEDGE BASE
+========================
+
+## NETWORK ISSUES
+
+### Issue: VPN Connection Drops Frequently
+**Symptoms:** VPN keeps disconnecting, especially after updates
+**Category:** Network
+**Priority:** P2
+**Resolution Steps:**
+1. Check VPN client version - update to latest (Settings > VPN > Check for Updates)
+2. Clear VPN cache: C:\ProgramData\Cisco\Cisco AnyConnect Secure Mobility Client\
+3. Restart VPN service: Services > Cisco AnyConnect > Restart
+4. If persistent, uninstall/reinstall VPN client from Software Center
+5. Restart machine and test connection
+**SLA:** 4 hours
+**Escalation:** If still failing, contact Network Team (ext. 5555)
+
+### Issue: Slow Network Speed
+**Symptoms:** Internet/network is slow, files take forever to download
+**Category:** Network
+**Priority:** P3
+**Resolution Steps:**
+1. Run speed test: speedtest.net
+2. Check WiFi signal strength - move closer to router if on WiFi
+3. Disconnect other devices using the network
+4. Restart modem/router (power off 30 seconds, then on)
+5. Run ipconfig /release and ipconfig /renew in Command Prompt
+6. Contact Network Team if speed < 10 Mbps
+**SLA:** 8 hours
+**Escalation:** Network Team for hardware issues
+
+### Issue: Cannot Connect to Network/No Internet
+**Symptoms:** Network icon shows red X, no internet connectivity
+**Category:** Network
+**Priority:** P1
+**Resolution Steps:**
+1. Run Network Troubleshooter (Windows Settings > Network > Troubleshoot)
+2. Check physical Ethernet cable connection if wired
+3. Restart network adapter: Device Manager > Network > Restart
+4. Check DNS: Run "ipconfig /all" and verify DNS servers (should be 8.8.8.8 or internal DNS)
+5. Clear DNS cache: ipconfig /flushdns
+6. Restart computer if above fails
+**SLA:** 2 hours
+**Escalation:** Network Team if hardware issue suspected
+
+---
+
+## APPLICATION ISSUES
+
+### Issue: Application Crashes on Startup
+**Symptoms:** App opens briefly then closes, error dialog appears
+**Category:** App
+**Priority:** P2
+**Resolution Steps:**
+1. Check Application Event Log (Event Viewer > Windows Logs > Application)
+2. Search error code in knowledge base or KB.company.com
+3. Repair application: Control Panel > Programs > Programs and Features > Select App > Repair
+4. If repair fails, uninstall completely and reinstall from Software Center
+5. Clear application cache: %APPDATA%\[AppName]\
+6. Restart computer and test
+**SLA:** 4 hours
+**Escalation:** Application Support Team
+
+### Issue: Application Running Slowly
+**Symptoms:** App is laggy, unresponsive, takes a long time to load
+**Category:** App
+**Priority:** P3
+**Resolution Steps:**
+1. Check Task Manager for CPU/RAM usage (Ctrl+Shift+Esc)
+2. Close unnecessary background applications
+3. Clear application cache and temp files
+4. Increase virtual memory if RAM usage > 80%
+5. Update to latest app version (Check Help > About > Update)
+6. Disable visual effects: Settings > Performance > Adjust for best performance
+**SLA:** 8 hours
+**Escalation:** Application Support if update required
+
+### Issue: Cannot Open File Type
+**Symptoms:** File extension not recognized, "Open with" dialog appears, wrong app opens file
+**Category:** App
+**Priority:** P3
+**Resolution Steps:**
+1. Right-click file > Properties > Change > Select correct application
+2. Check if required app is installed (Software Center)
+3. Run file type association repair tool
+4. If Office file (.xlsx, .docx): Repair Office via Control Panel > Programs > Programs and Features > Microsoft Office > Quick Repair > Online Repair
+5. Update file associations via Settings > Apps > Default apps
+**SLA:** 8 hours
+**Escalation:** Application Support Team
+
+### Issue: License Expired
+**Symptoms:** Software asks for license key, says "License expired" or "Unlicensed"
+**Category:** App
+**Priority:** P2
+**Resolution Steps:**
+1. Contact Software Asset Management (SAM) team: sam@company.com
+2. Provide: Employee ID, Department, Software name, current key
+3. SAM will provide new license key or instructions to install from Software Center
+4. In app: Help > License > Enter License Key > Paste new key > Restart app
+5. Verify license is active: Help > About > License shows valid date
+**SLA:** 4 hours
+**Escalation:** SAM Team for licensing issues
+
+---
+
+## ACCESS ISSUES
+
+### Issue: Cannot Access Shared Drive/Folder
+**Symptoms:** Folder shows "Access Denied", can't open shared drive, permission error
+**Category:** Access
+**Priority:** P2
+**Resolution Steps:**
+1. Verify you're logged into correct domain account (user@company.com)
+2. Map network drive: File Explorer > This PC > Map network drive > \\server\share\folder
+3. If error persists, contact your manager to request access
+4. Manager must submit access request in ServiceNow: IT > Access Requests
+5. Access Team will grant permissions (usually 1-2 hours)
+6. Restart computer to refresh credentials
+**SLA:** 4 hours
+**Escalation:** Access Control Team in ServiceNow
+
+### Issue: Password Reset/Forgot Password
+**Symptoms:** Locked out, can't remember password, password expired
+**Category:** Access
+**Priority:** P1
+**Resolution Steps:**
+1. Go to password reset portal: password.company.com
+2. Enter Employee ID and answer security questions
+3. Create new password (8+ chars, uppercase, number, special char)
+4. If locked out (3 failed attempts): Contact Help Desk at 1-800-COMPANY or ext. 4444
+5. Wait 30 minutes for account unlock, then retry
+6. Ensure password doesn't contain username or name
+**SLA:** 1 hour
+**Escalation:** Help Desk for account unlock
+
+### Issue: Email Account Not Syncing
+**Symptoms:** Email not sending/receiving, Outlook shows "Trying to connect"
+**Category:** Access
+**Priority:** P2
+**Resolution Steps:**
+1. Check internet connection (ping 8.8.8.8)
+2. Verify credentials: File > Account Settings > Change > Re-enter password
+3. Restart Outlook
+4. Check Exchange server status: status.company.com
+5. If still failing, rebuild Outlook profile: Control Panel > Mail > Show Profiles > Add new profile
+6. Restart computer
+**SLA:** 4 hours
+**Escalation:** Exchange Team if server issue
+
+---
+
+## HARDWARE ISSUES
+
+### Issue: Printer Not Working
+**Symptoms:** Printer offline, won't print, "Add Printer" fails
+**Category:** Hardware
+**Priority:** P2
+**Resolution Steps:**
+1. Check physical connection: USB cable (if wired) or WiFi (if wireless)
+2. Restart printer (power off 30 sec, back on)
+3. Check printer status: Settings > Devices > Printers > See what's printing > Delete all jobs
+4. Reinstall printer: Settings > Devices > Printers > Add Printer > Search for printer
+5. Update printer drivers: Device Manager > Printers > Right-click > Update driver
+6. Test print: Print test page from Device Manager
+**SLA:** 4 hours
+**Escalation:** Hardware Team if hardware failure suspected
+
+### Issue: Monitor Not Displaying
+**Symptoms:** Black screen, no signal, resolution wrong
+**Category:** Hardware
+**Priority:** P2
+**Resolution Steps:**
+1. Check cable connection: HDMI/DisplayPort to monitor and computer
+2. Restart monitor and computer
+3. Check display settings: Right-click desktop > Display settings > Adjust resolution
+4. Update graphics drivers: Device Manager > Display adapters > Right-click > Update driver
+5. Try different cable/port if available
+6. If dual monitor: Right-click > Display settings > Detect displays
+**SLA:** 4 hours
+**Escalation:** Hardware Team for equipment replacement
+
+### Issue: Computer Slow/Freezing
+**Symptoms:** System sluggish, programs freeze, high CPU/disk usage
+**Category:** Hardware
+**Priority:** P2
+**Resolution Steps:**
+1. Open Task Manager (Ctrl+Shift+Esc) > Performance tab
+2. Identify resource hog (CPU, RAM, Disk > 80%)
+3. If malware suspected: Run Windows Defender full scan (Settings > Virus & threat protection)
+4. Disable startup programs: Settings > Apps > Startup > Turn off non-essential items
+5. Increase virtual memory: Settings > System > About > Advanced system settings > Performance
+6. Restart computer
+**SLA:** 4 hours
+**Escalation:** Security Team if malware detected
+
+---
+
+## GENERAL TROUBLESHOOTING
+
+### Common Error Codes and Fixes
+- **Error 0x80070005:** Permission denied - run as administrator or request access
+- **Error 0xc0000428:** Missing file - reinstall application or OS
+- **Error 0x8004def1:** Registry issue - run System File Checker (sfc /scannow in CMD)
+- **Error 0x80004005:** Unspecified error - restart computer, clear cache, reinstall app
+
+### Escalation Contacts
+- **Network Team:** ext. 5555, network@company.com
+- **Help Desk:** 1-800-COMPANY, ext. 4444
+- **Application Support:** appsupport@company.com
+- **Hardware Team:** hardware@company.com
+- **Security Team:** security@company.com
+- **Access Control:** accesscontrol@company.com
